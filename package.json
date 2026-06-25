@@ -5,6 +5,11 @@
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
   "engines": {
     "node": ">=24.0.0"
   },
