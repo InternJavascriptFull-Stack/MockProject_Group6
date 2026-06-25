@@ -118,3 +118,12 @@ docker compose down
 ```
 
 _(Your development database data is persistent and stored in the local volume `mssql_data`)._
+
+---
+
+## Coding Standards & Git Workflow
+
+Before contributing or submitting a Pull Request, please ensure you review and follow the team's coding guidelines:
+
+- **Coding Guidelines:** Refer to the detailed guide in [docs/coding-standards.md](docs/coding-standards.md).
+- **Git Branching Policy:** Ensure all branches are named using the lowercase pattern: `feature/<name>`, `bugfix/<name>`, `refactor/<name>`, or `docs/<name>`.
