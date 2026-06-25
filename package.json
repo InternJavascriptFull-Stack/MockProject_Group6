@@ -1,5 +1,5 @@
 {
-  "name": "mockproject-group6",
+  "name": "nursinghome",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -14,6 +14,7 @@
     "node": ">=24.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24",
     "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0"
   }
