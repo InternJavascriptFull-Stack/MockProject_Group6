@@ -51,7 +51,20 @@ MockProject_Group6/           # Git Repository Root
 
 ## Local Development Setup Guide
 
-### 1. Prerequisite: Install Docker
+### 1. Prerequisite: Node.js & Corepack Setup
+
+This project uses a locked version of npm (`11.16.1`) to ensure consistent lockfiles across the team. To setup:
+
+1. Ensure you are using **Node.js LTS (v24)** (using `fnm` or `nvm` is recommended).
+2. Enable **Corepack** on your machine to automatically synchronize the correct npm version:
+
+   ```bash
+   corepack enable
+   ```
+
+   _Corepack will automatically fetch and use the correct `npm` version declared in `package.json` for all workspace commands, without changing your global system-wide npm._
+
+### 2. Install Docker
 
 - **Windows & macOS:** Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
   - _Windows:_ Ensure WSL 2 is enabled in Docker settings.
@@ -59,7 +72,7 @@ MockProject_Group6/           # Git Repository Root
 
 - **Linux:** Install Docker Engine and the `docker-compose-plugin` using your package manager.
 
-### 2. Start the local database
+### 3. Start the local database
 
 Run the following command at the root of the repository to launch the SQL Server container in the background:
 
@@ -75,7 +88,7 @@ docker ps
 
 _(You should see `mssql_nursing_home` with status `Up`)._
 
-### 3. Setup environment variables
+### 4. Setup environment variables
 
 Create a `.env` file at the root of the project by copying `.env.example`:
 
@@ -85,7 +98,7 @@ cp .env.example .env
 
 Ensure the credentials in `.env` match your local database configuration (refer to `.env.example` for the default connection variables).
 
-### 4. Sync Database Schema (Prisma)
+### 5. Sync Database Schema (Prisma)
 
 To initialize the SQL Server database schema from your Prisma models, run:
 
@@ -95,7 +108,7 @@ npx prisma db push
 
 ## Running the applications
 
-### 5. Running the applications in Development Mode
+### 6. Running the applications in Development Mode
 
 You can run both the frontend and backend applications simultaneously in development mode with a single command from the root of the repository:
 
