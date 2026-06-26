@@ -12,7 +12,7 @@
     "dev": "nest start --watch",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node --import tsconfig-paths/register.js dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix --cache --cache-location .eslintcache",
     "test": "jest",
     "test:watch": "jest --watch",
