@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function ForgotPass() {
+  const navigate = useNavigate();
+
+  const handleForgotPassword = () => {
+    void navigate("/login/enter-new-password");
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-700">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-10">
@@ -97,7 +105,7 @@ export default function ForgotPass() {
               </label>
 
               <a
-                href="#enter-new-password"
+                onClick={handleForgotPassword}
                 className="inline-flex h-12 items-center justify-center rounded-xl bg-slate-700 px-4 py-2 text-base leading-6 font-semibold tracking-tight text-white shadow-[0px_1px_2px_0px_rgba(13,13,18,0.06)] transition-colors hover:bg-slate-800 focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:outline-none"
               >
                 Forgot Password

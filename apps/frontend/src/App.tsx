@@ -1,51 +1,22 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import EnterNewPass from "./pages/EnterNewPass";
-import ForgotPass from "./pages/ForgotPass";
-import Login from "./pages/Login";
-
-type ViewName = "login" | "forgot-password" | "enter-new-password";
-
-function getViewFromHash(hash: string): ViewName {
-  switch (hash) {
-    case "#forgot-password":
-      return "forgot-password";
-    case "#enter-new-password":
-      return "enter-new-password";
-    default:
-      return "login";
-  }
-}
+import EnterNewPass from "./pages/login/EnterNewPass";
+import ForgotPass from "./pages/login/ForgotPass";
+import Login from "./pages/login/Login";
 
 function App() {
-  const [view, setView] = useState<ViewName>(() =>
-    getViewFromHash(window.location.hash),
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login/forgot-password" element={<ForgotPass />} />
+        <Route path="/login/enter-new-password" element={<EnterNewPass />} />
+      </Routes>
+    </BrowserRouter>
   );
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setView(getViewFromHash(window.location.hash));
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange();
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
-
-  if (view === "forgot-password") {
-    return <ForgotPass />;
-  }
-
-  if (view === "enter-new-password") {
-    return <EnterNewPass />;
-  }
-
-  return <Login />;
 }
 
 export default App;

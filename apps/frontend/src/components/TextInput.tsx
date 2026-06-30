@@ -24,7 +24,7 @@ export default function TextInput({
     <div className="flex flex-col gap-2 self-stretch">
       <label
         htmlFor={inputId}
-        className="font-['Inter_Tight'] text-sm leading-5 font-medium tracking-tight text-gray-500"
+        className="font-['Calibri_Light'] text-sm leading-5 font-medium tracking-tight text-gray-500"
       >
         {label}
       </label>
