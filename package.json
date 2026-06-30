@@ -42,5 +42,9 @@
   },
   "allowScripts": {
     "unrs-resolver@1.12.2": true
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "tailwindcss": "^4.3.2"
   }
 }
