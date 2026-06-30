@@ -4,7 +4,11 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MainLayout } from "./components/layout/MainLayout";
+import { DoctorsSchedulePage } from "./pages/schedule/DoctorsSchedulePage";
+
+function Welcome() {
   const [count, setCount] = useState(0);
 
   return (
@@ -118,6 +122,19 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route path="doctor-schedule" element={<DoctorsSchedulePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
