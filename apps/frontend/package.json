@@ -28,7 +28,7 @@
         "zustand": "^5.0.8"
     },
     "devDependencies": {
-        "@babel/core": "^7.29.7",
+        "@babel/core": "^8.0.1",
         "@nursinghome/eslint-config": "*",
         "@nursinghome/typescript-config": "*",
         "@types/babel__core": "^7.20.5",
