@@ -10,7 +10,7 @@ export default function LoginHeader() {
   };
 
   return (
-    <header className="flex items-center justify-between gap-4 pb-8 sm:pb-10">
+    <header className="flex items-center justify-between gap-4 pb-[24px]">
       <div
         className="flex h-8 w-auto cursor-pointer gap-[10px]"
         onClick={handleBrandClick}

@@ -4,10 +4,12 @@ import { Eye, EyeOff } from "lucide-react";
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   showPasswordToggle?: boolean;
+  error?: string;
 }
 
 export default function TextInput({
   label,
+  error,
   type = "text",
   showPasswordToggle = false,
   className = "",
@@ -33,9 +35,13 @@ export default function TextInput({
         <input
           id={inputId}
           type={inputType}
-          className={`h-12 w-full rounded-[10px] border border-zinc-200 bg-white px-3 ${
+          className={`h-10 w-full rounded-[10px] border bg-white px-3 ${
             showPasswordToggle ? "pr-11" : ""
-          } transition-colors outline-none focus:border-sky-500 ${className}`}
+          } ${
+            error
+              ? "border-red-500 focus:border-red-500"
+              : "border-zinc-200 focus:border-sky-500"
+          } transition-colors outline-none ${className}`}
           {...props}
         />
 
@@ -52,6 +58,8 @@ export default function TextInput({
           </button>
         )}
       </div>
+
+      {error && <p className="text-sm text-red-500">{error}</p>}
     </div>
   );
 }
